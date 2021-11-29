@@ -14,9 +14,11 @@ namespace ScitaniKaret
             List<int> pocetKaret = new List<int>();
             int pocet;
             int i = 1;
-            Console.WriteLine("-----Vítejte ve sčítači karet-----");
+            Console.WriteLine("---------------------------Vítejte ve sčítači karet---------------------------");
             Console.WriteLine("Zadávejte počty karet v jednotlivých dávkách.");
             Console.WriteLine("Pokud zadáte počet 0, tak se sečtou všechny karty a bude vypsán jejich součet.");
+            Console.WriteLine("Pokud zadáte záporný počet, tak se aplikace ukončí.");
+            Console.WriteLine("------------------------------------------------------------------------------");
 
             do
             {
@@ -31,20 +33,24 @@ namespace ScitaniKaret
                 }
                 else if (pocet == 0)
                 { 
-                        Console.WriteLine("Byl zadát počet 0, aplikace sečte všechny karty a vypíše součet.");
+                    Console.WriteLine("Byl zadát počet 0, aplikace sečte všechny karty a vypíše součet.");
                 }
                 else if (pocet < 0)
                 {
-                    Console.WriteLine("Byla zadána záporná hodnosta, aplikace bude ukončena.");
+                    Console.WriteLine("Byla zadána záporná hodnota, aplikace bude ukončena.");
                 }
 
             } while ((pocet != 0) && (pocet > 0));
 
 
 
-                if (pocetKaret.Sum() == 0)
+                if ((pocetKaret.Sum() == 0) && (pocet >0))
                 {
-                    Console.WriteLine("V dávkách nebyla ani jedna karta");
+                    Console.WriteLine("V dávkách nebyla ani jedna karta.");
+                }
+                else if (pocet < 0)
+                {
+                    Console.WriteLine("Počet karet nemůže být záporný.");
                 }
                 else
                 {
