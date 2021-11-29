@@ -16,16 +16,17 @@ namespace ScitaniKaret
             int i = 1;
             Console.WriteLine("---------------------------Vítejte ve sčítači karet---------------------------");
             Console.WriteLine("Zadávejte počty karet v jednotlivých dávkách.");
-            Console.WriteLine("Pokud zadáte počet 0, tak se sečtou všechny karty a bude vypsán jejich součet.");
+            Console.WriteLine("Pokud zadáte počet 0, tak se sečtou všechny karty, vypsán jejich součet a jednotlivé dávky.");
             Console.WriteLine("Pokud zadáte záporný počet, tak se aplikace ukončí.");
             Console.WriteLine("------------------------------------------------------------------------------");
 
             do
             {
-
-                
                 Console.Write("Zadejte {0}. počet karet: ", i++);
-                pocet = int.Parse(Console.ReadLine());
+                while (!int.TryParse(Console.ReadLine(), out pocet))
+                {
+                    Console.Write("Zadal jsi neplatný symbol, zadej počet znovu: ");
+                }
 
                 if ((pocet != 0) && ( pocet > 0))
                 {
@@ -33,11 +34,11 @@ namespace ScitaniKaret
                 }
                 else if (pocet == 0)
                 { 
-                    Console.WriteLine("Byl zadát počet 0, aplikace sečte všechny karty a vypíše součet.");
+                    Console.WriteLine("Byl zadát počet 0, aplikace sečte všechny karty, vypíše součet a všechny dávky.");
                 }
                 else if (pocet < 0)
                 {
-                    Console.WriteLine("Byla zadána záporná hodnota, aplikace bude ukončena.");
+                    Console.WriteLine("Počet karet nemůže být záporný.");
                 }
 
             } while ((pocet != 0) && (pocet > 0));
@@ -50,7 +51,7 @@ namespace ScitaniKaret
                 }
                 else if (pocet < 0)
                 {
-                    Console.WriteLine("Počet karet nemůže být záporný.");
+                    Console.WriteLine("Aplikace bude ukončena.");
                 }
                 else
                 {
