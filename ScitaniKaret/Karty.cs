@@ -8,7 +8,7 @@ namespace ScitaniKaret
 {
     class Karty
     {
-
+       
         public void SectiKarty()
         {
             List<int> pocetKaret = new List<int>();
@@ -51,12 +51,21 @@ namespace ScitaniKaret
                 }
                 else if (pocet < 0)
                 {
+                    Console.WriteLine("Celkový počet karet je: " + pocetKaret.Sum());
+                    if (pocetKaret.Sum() != 0)
+                    {
+                        Console.Write("V dávkách byly tyto hodnoty: {0}\n", string.Join(", ", pocetKaret));
+                    }
                     Console.WriteLine("Aplikace bude ukončena.");
                 }
                 else
                 {
                     Console.WriteLine("Celkový počet karet je: " + pocetKaret.Sum());
-                    Console.Write("V dávkách byly tyto hodnoty: {0}", string.Join(", ", pocetKaret));
+                    if (pocetKaret.Sum() != 0)
+                    {
+                        Console.Write("V dávkách byly tyto hodnoty: {0}\n", string.Join(", ", pocetKaret));
+                    }
+                    Console.WriteLine("Aplikace bude ukončena.");
                 }
         }
         
