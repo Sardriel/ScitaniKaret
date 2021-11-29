@@ -7,7 +7,7 @@ namespace ScitaniKaret
         static void Main(string[] args)
         {
             Karty karty = new Karty();
-            karty.PocetKaret();
+            karty.SectiKarty();
             Console.ReadKey();
         }
     }
