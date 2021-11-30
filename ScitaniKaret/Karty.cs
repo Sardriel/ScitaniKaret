@@ -56,7 +56,7 @@ namespace ScitaniKaret
                     {
                         Console.Write("V dávkách byly tyto hodnoty: {0}\n", string.Join(", ", pocetKaret));
                     }
-                    Console.WriteLine("Aplikace bude ukončena.");
+                    Console.WriteLine("Aplikace bude ukončena, pokračujte stisknutím libovolné klávesy.");
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace ScitaniKaret
                     {
                         Console.Write("V dávkách byly tyto hodnoty: {0}\n", string.Join(", ", pocetKaret));
                     }
-                    Console.WriteLine("Aplikace bude ukončena.");
+                    Console.WriteLine("Aplikace bude ukončena, pokračujte stisknutím libovolné klávesy.");
                 }
         }
         
